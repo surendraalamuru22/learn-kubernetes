@@ -8,3 +8,5 @@ spec:
   containers:
     - name: javawebappcontainer
       image: ashokit/javawebapp
+      ports:
+        - containerPort: 8080
