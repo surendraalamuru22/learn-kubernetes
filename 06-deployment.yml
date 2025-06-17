@@ -15,6 +15,6 @@ spec:
       labels:
         app: frontend
     spec:
-      - containers:
-          - name: nginx
-            image: nginx
+       containers:
+         - name: nginx
+           image: nginx
