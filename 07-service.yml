@@ -30,3 +30,16 @@ spec:
   containers:
     - name: debug
       image: rkalluru/debug
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-nginx-lb
+spec:
+  type: LoadBalancer
+  selector:
+    app: nginx
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
