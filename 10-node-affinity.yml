@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: with-node-affinity
+  name: with-node-affinity-1
 spec:
   affinity:
     nodeAffinity:
@@ -21,6 +21,32 @@ spec:
 #                operator: In
 #                values:
 #                  - another-node-label-value
+  containers:
+    - name: with-node-affinity
+      image: registry.k8s.io/pause:3.8
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: with-node-affinity-2
+spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+          - matchExpressions:
+              - key: size
+                operator: NotIn
+                values:
+                  - Medium
+  #      preferredDuringSchedulingIgnoredDuringExecution:
+  #        - weight: 1
+  #          preference:
+  #            matchExpressions:
+  #              - key: another-node-label-key
+  #                operator: In
+  #                values:
+  #                  - another-node-label-value
   containers:
     - name: with-node-affinity
       image: registry.k8s.io/pause:3.8
