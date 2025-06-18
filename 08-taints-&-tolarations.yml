@@ -26,3 +26,15 @@ spec:
       operator: "Equal"
       value: "one"
       effect: "NoSchedule"
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-3
+  labels:
+    env: test
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+      imagePullPolicy: IfNotPresent
