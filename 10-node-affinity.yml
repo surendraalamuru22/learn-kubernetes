@@ -12,7 +12,7 @@ spec:
                 operator: In
                 values:
                   - Large
-#                  - antarctica-west1
+                  - Small
 #      preferredDuringSchedulingIgnoredDuringExecution:
 #        - weight: 1
 #          preference:
