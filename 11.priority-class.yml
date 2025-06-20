@@ -38,7 +38,7 @@ spec:
       labels:
         app: nginx-a
     spec:
-      priorityClassName: high-priority
+#      priorityClassName: high-priority
       containers:
         - name: nginx
           image: nginx:1.17
@@ -64,6 +64,7 @@ spec:
       labels:
         app: nginx-b
     spec:
+      priorityClassName: high-priority
       containers:
         - name: nginx
           image: nginx:1.17
